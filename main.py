@@ -6,7 +6,11 @@ from rules import doorRule
 model = ifcopenshell.open("path/to/ifcfile.ifc")
 
 windowResult = windowRule.checkRule(model)
-doorResult = doorRule.checkRule(model)
+
+door_overview = doorRule.count_doors(model)
+door_report = doorRule.createDoorReport(door_overview)
 
 print("Window result:", windowResult)
-print("Door result:", doorResult)
+
+# Optionally write markdown to a file
+print("Markdown report:\n", door_report)

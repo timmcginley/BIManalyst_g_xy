@@ -1,6 +1,6 @@
 import ifcopenshell
 
-def checkRule(model):
+def checkRule(model: ifcopenshell.file) -> str:
     windows = model.by_type('IfcWindow')
 
     result = f"Windows: {len(windows)}"
